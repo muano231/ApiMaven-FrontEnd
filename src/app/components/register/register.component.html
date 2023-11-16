@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="title">
+        <h1>Créer un compte</h1>
+    </div>
+    <hr />
+    <div class="form">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="input">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" formControlName="username" required>
+            </div>
+            <div class="input">
+                <label for="username">Email</label>
+                <input type="email" formControlName="email" required>
+            </div>
+            <div class="input">
+                <label for="password">Mot de passe</label>
+                <input type="password" formControlName="password" required>
+            </div>
+            <div class="input">
+                <label for="confirmPassword">Confimer mot de passe</label>
+                <input type="password" formControlName="confirmPassword" required>
+            </div>
+            <div class="button">
+                <button type="submit" [disabled]="registerForm.invalid">Envoyer</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <a routerLink="/signin">Se connecter</a>
+    </div>
+</div>

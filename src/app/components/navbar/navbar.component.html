@@ -1,0 +1,23 @@
+<nav class="navbar">
+    <ul class="navbar-list">
+        <li class="navbar-brand"><a routerLink="/">Accueil</a></li>
+        <li class="navbar-brand"><a routerLink="/products">Produits</a></li>
+    </ul>
+    <ul class="navbar-list" *ngIf="!isUserLoggedIn">
+        <li class="navbar-brand"><a routerLink="/signin">Se connecter</a></li>
+        <li class="navbar-brand"><a routerLink="/register">Créer un compte</a></li>
+    </ul>
+    <ul class="navbar-list" *ngIf="isUserLoggedIn">
+        <li class="navbar-brand">
+            <a routerLink="/cart">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
+            </a>
+        </li>
+        <li class="navbar-brand">
+            <a routerLink="/account">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="account_circle"></mat-icon>
+            </a>
+        </li>
+        <li class="navbar-brand"><button class="logout-button" (click)="logout()">Se deconnecter</button></li>
+    </ul>
+</nav>

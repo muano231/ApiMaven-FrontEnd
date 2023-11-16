@@ -1,0 +1,23 @@
+<div>
+    <h1>Detail de la commande</h1>
+    <!-- {{order | json}} -->
+    <div>
+        <p>{{order.id}}</p>
+        <!-- <p>{{order.orderDetails}}</p> -->
+        <div *ngFor="let orderDetail of order.orderDetails">
+            <p>{{orderDetail.id}}</p>
+            <p>{{orderDetail.price}}</p>
+            <!-- <p>{{orderDetail.product}}</p> -->
+            <div>
+                <p>{{orderDetail.product.description}}</p>
+                <p>{{orderDetail.product.id}}</p>
+                <p>{{orderDetail.product.name}}</p>
+                <p>{{orderDetail.product.price}}</p>
+                <p>{{orderDetail.product.quantity}}</p>
+            </div>
+            <p>{{orderDetail.quantity}}</p>
+        </div>
+        <p>{{order.price}}</p>
+        <p>{{order.status}}</p>
+    </div>
+</div>

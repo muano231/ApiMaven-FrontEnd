@@ -1,0 +1,6 @@
+<div>
+    <h1>Mes commandes</h1>
+    <div *ngFor="let order of orders; let i = index">
+        <app-order-card [order]="order" [index]="i"></app-order-card>
+    </div>
+</div>
